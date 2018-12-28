@@ -1,7 +1,7 @@
 package ws
 
 func FibonacciRecursive(n int) (fib []int) {
-	for i:=1; i <= n; i++ {
+	for i := 1; i <= n; i++ {
 		fib = append(fib, rfibonacci(i))
 	}
 	return

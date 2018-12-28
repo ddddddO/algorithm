@@ -12,7 +12,7 @@ func Fibonacci(target int) (fib []int) {
 	case 1:
 		return
 	}
-	
+
 	sum := 0
 	for i := 1; i < target; i++ {
 		sum = fib[i-1] + fib[i]
