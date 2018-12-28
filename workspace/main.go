@@ -15,5 +15,7 @@ func main() {
 
 	fmt.Println(ws.Fibonacci(9))
 
+	fmt.Println(ws.FibonacciRecursive(8))
+
 	fmt.Println("-  end  -")
 }
