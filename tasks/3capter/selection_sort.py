@@ -32,9 +32,10 @@ def sel_sort_at_any_time(l):
         for k in range(j, length):
             cmpr_c+=1
             if l[i] >= l[k]:
-                tmp = l[k]
-                l[k] = l[i]
-                l[i] = tmp
+                #tmp = l[k]
+                #l[k] = l[i]
+                #l[i] = tmp
+                l[i], l[k] = l[k], l[i]
 
                 exchn_c+=1
 
