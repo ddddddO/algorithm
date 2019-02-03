@@ -1,4 +1,3 @@
-# TODO:見直し必須
 def insert_sort(l):
     if len(l) < 1:
         return
@@ -27,3 +26,22 @@ if __name__ == '__main__':
     insert_sort(l)
     print(l) # 参照渡しだから
     print("--insertion sort end--")
+    print()
+
+    print("--練習4.3 1--")
+    l1 = [5, 8, 3, 6, 1]
+    insert_sort(l1)
+    print(l1)
+    print()
+
+    print("--練習4.3 2--")
+    l2 = [8, 6, 5, 3, 1]
+    insert_sort(l2)
+    print(l2)
+    print()
+
+    print("--練習4.3 3--")
+    l3 = [1, 3, 5, 6, 8]
+    insert_sort(l3)
+    print(l3)
+    print()
