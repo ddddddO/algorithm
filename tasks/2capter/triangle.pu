@@ -1,0 +1,16 @@
+@startuml
+start
+:INPUT x, y, z;
+if (x+y<z and y+z<x and z+x<y) then (yes)
+    if (x=y=z) then (yes)
+        :正三角形;
+    elseif (x=y or y=z or z=x) then (yas)
+        :二等辺三角形(正三角形は含まない);
+    else (no)
+        :三角形;
+    endif
+else (no)
+    :三角形ではない;
+endif
+end
+@enduml
