@@ -2,14 +2,14 @@ def insert_sort(l):
     if len(l) < 1:
         return
 
-    exch_sum = 0
+    cmpr_sum = 0
     for i in range(len(l)-1):
         tmp = l[i+1] # 整列済み部分の１つ後ろの要素
-        exch_n = 0
+        cmpr_n = 0
 
         # 整列済み部分の後ろからtmpを挿入するところをサーチ
         for j in range(i, -1, -1):
-            exch_n+=1
+            cmpr_n+=1
 
             if l[j] >= tmp:
                 l[j], l[j+1] = tmp, l[j]
@@ -17,8 +17,8 @@ def insert_sort(l):
                 # 残りの整列済み部分のサーチを飛ばす
                 break
 
-        exch_sum+= exch_n
-    print("比較回数(合計)：{}".format(exch_sum))
+        cmpr_sum+= cmpr_n
+    print("比較回数(合計)：{}".format(cmpr_sum))
 
 if __name__ == '__main__':
     print("--insertion sort start--")
