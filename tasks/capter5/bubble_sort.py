@@ -52,16 +52,30 @@ if __name__=='__main__':
     print(l)
     '''
 
+    '''
     print("--bubble_sort--")
     l1 = [5, 7, 9, 2, 4]
     bubble_sort(l1)
     print(l1)
     print("--bubble sort--")
     print()
+    '''
 
+    '''
     print("--bubble_sort_v2--")
     l2 = [5, 7, 9, 2, 4]
     bubble_sort_v2(l2)
     print(l2)
     print("--bubble sort_v2--")
     print()
+    '''
+
+    print("--5.3 1--")
+    l3 = [8, 6, 5, 3, 1]
+    bubble_sort_v2(l3)
+    print(l3)
+
+    print("--5.3 2--")
+    l4 = [1, 3, 8, 6, 5]
+    bubble_sort_v2(l4)
+    print(l4)
