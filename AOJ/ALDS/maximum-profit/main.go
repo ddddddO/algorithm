@@ -30,15 +30,30 @@ func main() {
 		list[i] = in
 	}
 
+	// O(n)
+	min := list[0]
 	max := list[n-1] - list[n-2]
-	for i := n - 1; i > 0; i-- {
-		for j := i - 1; j >= 0; j-- {
-			tmp := list[i] - list[j]
-			if max < tmp {
-				max = tmp
-			}
+	for i := 1; i < n; i++ {
+		if max < list[i]-min {
+			max = list[i] - min
+		}
+
+		if min > list[i] {
+			min = list[i]
 		}
 	}
 
+	/*
+		// O(n^2)
+		max := list[n-1] - list[n-2]
+		for i := n - 1; i > 0; i-- {
+			for j := i - 1; j >= 0; j-- {
+				tmp := list[i] - list[j]
+				if max < tmp {
+					max = tmp
+				}
+			}
+		}
+	*/
 	fmt.Println(max)
 }
