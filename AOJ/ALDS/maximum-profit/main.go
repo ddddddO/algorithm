@@ -32,7 +32,7 @@ func main() {
 
 	max := list[n-1] - list[n-2]
 	for i := n - 1; i > 0; i-- {
-		for j := i - 1; j > 0; j-- {
+		for j := i - 1; j >= 0; j-- {
 			tmp := list[i] - list[j]
 			if max < tmp {
 				max = tmp
