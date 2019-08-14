@@ -21,14 +21,14 @@ func main() {
 		panic(err)
 	}
 
-	list := make([]int, n)
-	newInput := strings.ReplaceAll(inputLine, " ", "")
-	for i, v := range newInput {
+	list := []int{}
+	newInput := strings.Replace(inputLine, " ", "", -1)
+	for _, v := range newInput {
 		num, err := strconv.Atoi(string(v))
 		if err != nil {
 			panic(err)
 		}
-		list[i] = num
+		list = append(list, num)
 	}
 
 	insertionSort(list, n)
