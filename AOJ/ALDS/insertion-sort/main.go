@@ -22,9 +22,9 @@ func main() {
 	}
 
 	list := []int{}
-	newInput := strings.Replace(inputLine, " ", "", -1)
+	newInput := strings.Split(inputLine, " ")
 	for _, v := range newInput {
-		num, err := strconv.Atoi(string(v))
+		num, err := strconv.Atoi(v)
 		if err != nil {
 			panic(err)
 		}
