@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -19,13 +21,46 @@ var dummy = &LinkedNode{
 }
 
 func main() {
-	insertX(5)
-	insertX(2)
-	insertX(3)
-	insertX(1)
-	deleteX(3) // TODO: deleteがうまくいかない
-	//	insertX(6)
-	//	deleteX(5)
+	sc := bufio.NewScanner(os.Stdin)
+	sc.Scan()
+
+	n, err := strconv.Atoi(sc.Text())
+	if err != nil {
+		panic(err)
+	}
+
+	for i := 0; i < n; i++ {
+		sc.Scan()
+		text := sc.Text()
+
+		switch text {
+		case "deleteFirst":
+			deleteFirst()
+
+		case "deleteLast":
+			deleteLast()
+
+		default:
+			splited := []string{}
+
+			if strings.Contains(text, "delete") {
+				splited = strings.Split(text, " ")
+				n, err := strconv.Atoi(splited[1])
+				if err != nil {
+					panic(err)
+				}
+				deleteX(n)
+			}
+			if strings.Contains(text, "insert") {
+				splited = strings.Split(text, " ")
+				n, err := strconv.Atoi(splited[1])
+				if err != nil {
+					panic(err)
+				}
+				insertX(n)
+			}
+		}
+	}
 
 	display()
 }
@@ -54,6 +89,10 @@ func insertX(x int) {
 		next:  dummy.next,
 	}
 
+	// 以下、if文腑に落ちない
+	if dummy.next != nil {
+		dummy.next.prev = head
+	}
 	dummy.next = head
 }
 
@@ -77,14 +116,20 @@ func deleteX(x int) {
 	}
 
 	target.prev.next = target.next
-	target.next.prev = target.prev
+
+	if target.next != nil {
+		target.next.prev = target.prev
+	}
 
 }
 
 func deleteFirst() {
 	next := dummy.next.next
 	dummy.next = next
-	next.prev = dummy
+
+	if next != nil {
+		next.prev = dummy
+	}
 }
 
 func deleteLast() {
